@@ -18,7 +18,7 @@ const mockResponse = "Название: Курочка по-провански �
     "6. Запекайте блюдо примерно 25–30 минут до золотистой корочки картофеля и готовности мяса.\n" +
     "Изображение: нет изображения"
 
-async function getToken(auth) {
+async function getToken() {
   let config = {
     method: 'post',
     maxBodyLength: Infinity,
@@ -27,7 +27,6 @@ async function getToken(auth) {
       'Content-Type': 'application/x-www-form-urlencoded',
       'Accept': 'application/json',
       RqUID: uuidv4(),
-      Authorization: `Basic ${auth}`,
     },
     data: qs.stringify({
       'scope': 'GIGACHAT_API_PERS'
@@ -45,13 +44,12 @@ async function getToken(auth) {
 }
 
 export class GigaChatService {
-  constructor(gigaAuth) {
-    this.gigaAuth = gigaAuth;
+  constructor() {
     this.baseUrl = '/api/v1/chat/completions';
   }
 
   async generateRecipe(ingredients) {
-    const token = await getToken(this.gigaAuth);
+    const token = await getToken();
     try {
       const prompt = `
       На основе следующих ингредиентов: ${ingredients}, придумай оригинальный и вкусный рецепт.
