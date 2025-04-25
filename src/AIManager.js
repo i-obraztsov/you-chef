@@ -1,10 +1,4 @@
-const mapCategory = {
-    завтрак: 'breakfast',
-    обед: 'lunch',
-    ужин: 'dinner',
-    десерт: 'dessert',
-    перекус: 'snack',
-}
+import {generateRecipe} from "./services/giga-chat.js";
 
 function parseRecipeResponse(text) {
     const recipe = {
@@ -23,8 +17,8 @@ function parseRecipeResponse(text) {
 
     if (titleMatch) recipe.title = titleMatch[1].trim();
     if (categoryMatch) {
-        const matchedCategory = categoryMatch[1].trim();
-        recipe.category = mapCategory[matchedCategory];
+        const [first = '', ...rest] = categoryMatch[1].trim();
+        recipe.category = first.toUpperCase() + rest.join('');
     }
 
     if (ingredientsMatch) {
@@ -50,8 +44,7 @@ function parseRecipeResponse(text) {
 }
 
 export class AIManager {
-    constructor(gigaChatService, ingredients, steps) {
-        this.gigaChat = gigaChatService;
+    constructor(ingredients, steps) {
         this.ingredients = ingredients;
         this.steps = steps;
 
@@ -66,7 +59,7 @@ export class AIManager {
         const ingredients = ingredientsInput.value.trim();
 
         try {
-            const generatedRecipe = await this.gigaChat.generateRecipe(ingredients);
+            const generatedRecipe = await generateRecipe(ingredients);
             const recipe = parseRecipeResponse(generatedRecipe);
 
             this.fillRecipeForm(recipe);

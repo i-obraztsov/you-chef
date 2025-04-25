@@ -1,22 +1,4 @@
-function readFileAsDataUrl(file) {
-    return new Promise((resolve, reject) => {
-        if (!file.size) {
-            resolve({
-                url: null,
-                title: null,
-            });
-            return;
-        }
-        const reader = new FileReader();
-
-        reader.onload = () => resolve({
-            url: reader.result,
-            title: file.title
-        });
-        reader.onerror = () => reject(new Error('Не удалось прочитать файл'))
-        reader.readAsDataURL(file);
-    });
-}
+import {readFileAsDataUrl} from "./lib/read-file-as-data-url.js";
 
 export class UIManager {
     constructor(recipeManager, ingredients, steps) {
@@ -27,7 +9,7 @@ export class UIManager {
         this.paginationContainer = document.getElementById('pagination');
 
         this.currentPage = 1;
-        this.recipesPerPage = 4;
+        this.recipesPerPage = 6;
 
         this.ingredientsFM = ingredients;
         this.stepsFM = steps;
@@ -45,8 +27,6 @@ export class UIManager {
 
         const formData = new FormData(this.form);
         const imageFile = formData.get('image');
-
-        console.log(imageFile)
 
         try {
             const imageData = await readFileAsDataUrl(imageFile);
