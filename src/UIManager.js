@@ -46,8 +46,6 @@ export class UIManager {
                 imageTitle: imageData.title
             };
 
-            console.log(recipe)
-
             this.recipeManager.addRecipe(recipe);
             this.resetForm();
             this.renderRecipes();
