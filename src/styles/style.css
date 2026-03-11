@@ -1,0 +1,19 @@
+@import "variables.css";
+@import "base.css";
+@import "header.css";
+@import "form.css";
+@import "button.css";
+@import "badge.css";
+@import "recipes.css";
+@import "pagination.css";
+@import "dialog.css";
+
+/*.placeholder-image {*/
+/*    width: 100%;*/
+/*    height: 295px;*/
+/*    background: var(--color-border);*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+

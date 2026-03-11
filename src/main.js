@@ -1,4 +1,4 @@
-import './style.css';
+import './styles/style.css';
 import {RecipeManager} from "./RecipeManager";
 import {StorageManager} from "./StorageManager";
 import {UIManager} from "./UIManager.js";

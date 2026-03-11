@@ -1,0 +1,60 @@
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.2s;
+    text-align: center;
+    background: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.btn:hover:not(:disabled) {
+    background: var(--color-secondary-dk);
+}
+
+.btn--danger {
+    background: var(--color-danger);
+    color: var(--color-white);
+}
+
+.btn--danger:hover:not(:disabled) {
+    background: var(--color-danger-dk);
+}
+
+.btn--disabled,
+.btn:disabled {
+    background: var(--color-muted);
+    cursor: not-allowed;
+}
+
+.btn--remove {
+    margin: 0;
+    font-size: 0;
+    width: 32px;
+    height: 32px;
+    position: relative;
+}
+
+.btn--remove::before,
+.btn--remove::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -6px;
+    width: 12px;
+    height: 2px;
+    background: var(--color-white);
+}
+
+.btn--remove::before {
+    transform: rotate(45deg);
+}
+
+.btn--remove::after {
+    transform: rotate(-45deg);
+}

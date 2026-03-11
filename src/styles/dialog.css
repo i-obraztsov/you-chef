@@ -1,0 +1,61 @@
+.recipe-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.recipe-dialog {
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: 0;
+    max-width: 600px;
+    width: 90%;
+    color: var(--color-text);
+    box-shadow: var(--shadow-lg);
+    background: var(--color-white);
+}
+
+.recipe-dialog__header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.recipe-dialog__title {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.recipe-dialog__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.recipe-dialog__date {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+}
+
+.recipe-dialog__body {
+    padding: 1rem 1.5rem;
+    max-height: 56vh;
+    overflow-y: auto;
+}
+
+.recipe-dialog__section {
+    margin-bottom: 1rem;
+}
+
+.recipe-dialog__section h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+    color: var(--color-text);
+}
+
+.recipe-dialog__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--color-border);
+}

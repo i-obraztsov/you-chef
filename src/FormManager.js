@@ -15,7 +15,7 @@ export class FormManager {
     }
 
     attachRemove(item) {
-        const btn = item.querySelector('.btn-remove');
+        const btn = item.querySelector('.btn');
         btn.addEventListener('click', () => {
             item.remove();
         })

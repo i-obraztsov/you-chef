@@ -1,0 +1,32 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    color-scheme: light dark;
+    font-family: var(--font-sans), sans-serif;
+    line-height: var(--line-height);
+    color: var(--color-text);
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    background: var(--color-bg);
+}
+
+h1, h2, h3, h4, p, ul, ol {
+    margin: 0 0 0.5rem;
+}
+
+ul, ol {
+    padding-left: 1.25rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

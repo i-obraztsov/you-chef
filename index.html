@@ -5,8 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>YouChef - Ваша персональная книга рецептов</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
-    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="/src/styles/style.css">
 </head>
 
 <body>
@@ -45,13 +44,13 @@
                     <legend>Ингредиенты</legend>
                     <div class="ingredient-item">
                         <input name="ingredients[]" type="text" placeholder="Мука, 200 г" required/>
-                        <button type="button" class="btn btn--danger btn-remove">Удалить</button>
+                        <button type="button" class="btn btn--danger btn--remove">Удалить</button>
                     </div>
                     <button type="button" id="addIngredientBtn" class="btn btn--primary">Добавить ингредиент</button>
                     <template>
                         <div class="ingredient-item">
                             <input name="ingredients[]" type="text" placeholder="Мука, 200 г" required/>
-                            <button type="button" class="btn btn--danger btn-remove">Удалить</button>
+                            <button type="button" class="btn btn--danger btn--remove">Удалить</button>
                         </div>
                     </template>
                 </fieldset>
@@ -60,13 +59,13 @@
                     <legend>Этапы приготовления</legend>
                     <div class="step-item">
                         <textarea name="steps[]" placeholder="Пшеничную муку просеять…" required></textarea>
-                        <button type="button" class="btn btn--danger btn-remove">Удалить</button>
+                        <button type="button" class="btn btn--danger btn--remove">Удалить</button>
                     </div>
                     <button type="button" id="addStepBtn" class="btn btn--primary">Добавить шаг</button>
                     <template>
                         <div class="step-item">
                             <textarea name="steps[]" placeholder="Пшеничную муку просеять…" required></textarea>
-                            <button type="button" class="btn btn--danger btn-remove">Удалить</button>
+                            <button type="button" class="btn btn--danger btn--remove">Удалить</button>
                         </div>
                     </template>
                 </fieldset>
